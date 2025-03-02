@@ -1,6 +1,6 @@
 export default function Wrapper({ children }) {
     return (
-      <div style={{ padding: '20px', maxWidth: '1000px', margin: '0 auto' }}>
+      <div className="max-w-2xl mt-5 mb-5 mx-auto space-y-4 p-4 border rounded shadow">  
         {children}
       </div>
     );

@@ -1,13 +1,13 @@
-import { auth } from "@/auth"
- 
-export default async function UserAvatar() {
-  const session = await auth()
+import Wrapper from "./global/wrapper";
 
-  if (!session?.user) return null
+ 
+export default function UserAvatar({user}) {
+
  
   return (
-    <div>
-      <img src={session.user.image} alt="User Avatar" />
-    </div>
+    <Wrapper>
+      <h1>Hola {user.name}</h1>
+      <img src={user.image} alt="User Avatar" />
+    </Wrapper>
   )
 }

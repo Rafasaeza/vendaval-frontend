@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-
+import Wrapper from '@/components/global/wrapper';
 export default function BuscarArticulo({ userEmail }) {
   const [query, setQuery] = useState('');
   const [articulos, setArticulos] = useState([]);
@@ -85,7 +85,8 @@ export default function BuscarArticulo({ userEmail }) {
   };
 
   return (
-    <div className="space-y-4 p-4 border rounded shadow">
+    
+    <Wrapper>
       <form onSubmit={handleSearch} className="space-y-2">
         <label className="block text-sm font-medium">Buscar artículo</label>
         <input
@@ -166,6 +167,6 @@ export default function BuscarArticulo({ userEmail }) {
           !loading && !error && <p>No hay artículos que coincidan con la búsqueda.</p>
         )}
       </div>
-    </div>
+    </Wrapper>
   );
 }

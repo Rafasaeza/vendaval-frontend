@@ -1,14 +1,16 @@
-import { auth } from "@/auth";
+'use client';
 import ArticleForm from '@/components/forms/createArticle';
 import Footer from '@/components/global/footer';
 import Nav from '@/components/global/nav';
-export default async function EventoDetalles() {
-    const session = await auth(); // Ejecuta auth en el servidor
-    const user = session.user;
+import { useSession } from "next-auth/react";
+export default  function EventoDetalles() {
+  const { data: session, status } = useSession();
+  if (status === "loading") return <p>Loading...</p>;
+  if (!session || !session.user) return <h1>Not authenticated</h1>;
   return (
-   user? <>
+   <>
   <Nav></Nav>
-  <ArticleForm userEmail={user.email}/>
+  <ArticleForm userEmail={session.user.email}/>
   <Footer></Footer>
-  </>: <h1>Not authenticated</h1>);
+  </>);
 }

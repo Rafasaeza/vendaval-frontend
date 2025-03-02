@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-
+import Wrapper from '@/components/global/wrapper';
 export default function ArticleForm({ userEmail }) {
   const [descripcion, setDescripcion] = useState('');
   const [precioSalida, setPrecioSalida] = useState('');
@@ -61,7 +61,8 @@ export default function ArticleForm({ userEmail }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 p-4 border rounded shadow">
+    <Wrapper>
+    <form onSubmit={handleSubmit} >
       <div>
         <label className="block text-sm font-medium">Descripción</label>
         <textarea
@@ -103,5 +104,6 @@ export default function ArticleForm({ userEmail }) {
         Publicar Artículo
       </button>
     </form>
+    </Wrapper>
   );
 }
