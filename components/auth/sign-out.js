@@ -1,4 +1,4 @@
-import  {handleSignOut}  from "@components/actions/handleSignOut"
+import  {handleSignOut}  from "@/components/actions/handleSignOut"
 
 export default function SignOut() {
   return (
