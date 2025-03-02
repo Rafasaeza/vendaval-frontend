@@ -1,5 +1,5 @@
 
-import SignOut from "../sign-out";
+import SignOut from "@/components/auth/sign-out"; // Importa el componente SignOut
 import './Nav.css'; // Asegúrate de importar el archivo CSS
 
 export default function Nav() {

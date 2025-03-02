@@ -1,5 +1,5 @@
-import SignIn from "@/components/sign-in";
-import Image from "next/image";
+import SignIn from "@/components/auth/sign-in";
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 export default function SignInPage() {
   return (
